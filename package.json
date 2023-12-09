@@ -1,0 +1,22 @@
+{
+  "name": "expo-snackify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"snackify": "tsc && node dist/snackify.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "snack-sdk": "^4.2.0"
+  }
+}
