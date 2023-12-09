@@ -1,6 +1,6 @@
 {
   "name": "expo-snackify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "author": "danstepanov",
   "main": "dist/snackify.js",
