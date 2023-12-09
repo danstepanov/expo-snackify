@@ -3,6 +3,8 @@
 import * as fs from 'fs-extra';
 import * as path from 'path';
 import { Snack, SnackOptions } from 'snack-sdk';
+// @ts-ignore
+import { Select } from 'enquirer';
 
 function processDirectory(dirPath: string, snackFiles: any, rootPath: string) {
     const entries = fs.readdirSync(dirPath);
@@ -49,9 +51,31 @@ export default Index;`;
     const snack = new Snack(options);
     const snackPath = await snack.saveAsync();
 
-    console.log(`Expo Snack URL: https://snack.expo.dev/${snackPath.id}`);
+	const prompt = new Select({
+		name: 'platform',
+		message: 'Choose a simulator platform:',
+		choices: ['iOS', 'Android', 'Web (Experimental)']
+	});
+
+	const platformChoice = await prompt.run();
+	let platformUrl = `https://snack.expo.dev/${snackPath.id}`;
+
+	switch (platformChoice) {
+		case 'Android':
+			platformUrl += '?platform=android';
+			break;
+		case 'Web (Experimental)':
+			break;
+		case 'iOS':
+		default:
+			platformUrl += '?platform=ios';
+			break;
+	}
+
+	console.log(`Expo Snack URL: ${platformUrl}`);
   } catch (error) {
     console.error('Failed to create Expo Snack:', error);
+	console.error('Please create an issue at https://github.com/danstepanov/expo-snackify/issues');
   }
 }
 

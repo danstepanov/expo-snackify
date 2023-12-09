@@ -36,6 +36,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs-extra"));
 const path = __importStar(require("path"));
 const snack_sdk_1 = require("snack-sdk");
+// @ts-ignore
+const enquirer_1 = require("enquirer");
 function processDirectory(dirPath, snackFiles, rootPath) {
     const entries = fs.readdirSync(dirPath);
     entries.forEach(entry => {
@@ -75,10 +77,29 @@ export default Index;`;
             };
             const snack = new snack_sdk_1.Snack(options);
             const snackPath = yield snack.saveAsync();
-            console.log(`Expo Snack URL: https://snack.expo.dev/${snackPath.id}`);
+            const prompt = new enquirer_1.Select({
+                name: 'platform',
+                message: 'Choose a simulator platform:',
+                choices: ['iOS', 'Android', 'Web (Experimental)']
+            });
+            const platformChoice = yield prompt.run();
+            let platformUrl = `https://snack.expo.dev/${snackPath.id}`;
+            switch (platformChoice) {
+                case 'Android':
+                    platformUrl += '?platform=android';
+                    break;
+                case 'Web (Experimental)':
+                    break;
+                case 'iOS':
+                default:
+                    platformUrl += '?platform=ios';
+                    break;
+            }
+            console.log(`Expo Snack URL: ${platformUrl}`);
         }
         catch (error) {
             console.error('Failed to create Expo Snack:', error);
+            console.error('Please create an issue at https://github.com/danstepanov/expo-snackify/issues');
         }
     });
 }

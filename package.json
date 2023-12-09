@@ -6,12 +6,18 @@
   "main": "dist/snackify.js",
   "bin": {
     "expo-snackify": "./dist/snackify.js"
-  }, 
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"snackify": "tsc && node dist/snackify.js"
+    "snackify": "tsc && node dist/snackify.js"
   },
-  "keywords": ["expo", "snack", "snackify", "snackify-expo", "create-expo-stack"],
+  "keywords": [
+    "expo",
+    "snack",
+    "snackify",
+    "snackify-expo",
+    "create-expo-stack"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
@@ -19,6 +25,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "enquirer": "^2.4.1",
     "fs-extra": "^11.2.0",
     "snack-sdk": "^4.2.0"
   }
