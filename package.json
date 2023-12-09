@@ -1,15 +1,18 @@
 {
   "name": "expo-snackify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "author": "danstepanov",
+  "main": "dist/snackify.js",
+  "bin": {
+    "expo-snackify": "./dist/snackify.js"
+  }, 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 	"snackify": "tsc && node dist/snackify.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["expo", "snack", "snackify", "snackify-expo", "create-expo-stack"],
+  "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.10.4",
