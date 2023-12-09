@@ -28,7 +28,19 @@ function processDirectory(dirPath: string, snackFiles: any, rootPath: string) {
     });
 };
 
+function isExpoProject(directory: string) {
+	const appJsonPath = path.join(directory, 'app.json');
+	const nodeModulesPath = path.join(directory, 'node_modules', 'expo');
+
+	return fs.existsSync(appJsonPath) && fs.existsSync(nodeModulesPath);
+}
+
 async function createSnack() {
+	// Check if the current directory is an Expo project
+	if (!isExpoProject(process.cwd())) {
+        console.error('Error: The current directory does not appear to be an Expo project.');
+        return;
+    }
 
 	// Create a basic App.js file
 	const basicAppJs = `import Index from './index';
