@@ -1,19 +1,20 @@
 {
-  "name": "expo-snackify",
-  "version": "1.0.4",
+  "name": "create-snack",
+  "version": "1.0.5",
   "description": "",
   "author": "danstepanov",
   "main": "dist/snackify.js",
   "bin": {
-    "expo-snackify": "./dist/snackify.js"
+    "create-snack": "./dist/snackify.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "snackify": "tsc && node dist/snackify.js"
+    "create-snack": "tsc && node dist/snackify.js"
   },
   "keywords": [
     "expo",
     "snack",
+    "create-snack",
     "snackify",
     "snackify-expo",
     "create-expo-stack"

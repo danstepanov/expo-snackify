@@ -71,6 +71,12 @@ function createSnack() {
             return;
         }
         try {
+            const prompt = new enquirer_1.Select({
+                name: 'platform',
+                message: 'Choose a simulator platform:',
+                choices: ['iOS', 'Android', 'Web (Experimental)']
+            });
+            const platformChoice = yield prompt.run();
             // Read files from the current directory
             const files = {};
             const rootPath = process.cwd();
@@ -92,12 +98,6 @@ export default Index;`;
             };
             const snack = new snack_sdk_1.Snack(options);
             const snackPath = yield snack.saveAsync();
-            const prompt = new enquirer_1.Select({
-                name: 'platform',
-                message: 'Choose a simulator platform:',
-                choices: ['iOS', 'Android', 'Web (Experimental)']
-            });
-            const platformChoice = yield prompt.run();
             let platformUrl = `https://snack.expo.dev/${snackPath.id}`;
             switch (platformChoice) {
                 case 'Android':

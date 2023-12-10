@@ -16,7 +16,7 @@ Note: The [Expo](https://expo.dev) name and logo are trademarks of 650 Industrie
 To install Snackify, run the following command in your terminal:
 
 ```bash
-npm install -g expo-snackify
+npm install -g create-snack
 ```
 
 This will install Snackify globally on your machine, allowing you to use it in any Expo project.
@@ -26,7 +26,7 @@ This will install Snackify globally on your machine, allowing you to use it in a
 Navigate to the root directory of your Expo project and run:
 
 ```bash
-npx expo-snackify
+npx create snack
 ```
 
 The command scans all the files in your Expo project, excluding `node_modules` and `.git`, and creates a new Expo Snack. Upon completion, it provides a URL to the created Expo Snack.
