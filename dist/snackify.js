@@ -70,16 +70,21 @@ function createSnack() {
             console.error('Error: The current directory does not appear to be an Expo project.');
             return;
         }
-        // Create a basic App.js file
-        const basicAppJs = `import Index from './index';
-export default Index;`;
         try {
             // Read files from the current directory
             const files = {};
             const rootPath = process.cwd();
             processDirectory(rootPath, files, rootPath);
+            // Snack requires an App.js file
+            // Check if there is an App.js file
+            // If not, create a basic one
             // @ts-ignore
-            files['App.js'] = { contents: basicAppJs, type: 'CODE' };
+            if (!files['App.js'] || !files['App.jsx'] || !files['App.tsx'] || !files['App.ts']) {
+                const basicAppJs = `import Index from './index';
+export default Index;`;
+                // @ts-ignore
+                files['App.js'] = { contents: basicAppJs, type: 'CODE' };
+            }
             const options = {
                 name: 'My Expo Snack',
                 description: 'Created from my local project',
