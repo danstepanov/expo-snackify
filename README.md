@@ -3,7 +3,7 @@
 
 Snackify is a Node.js module designed to simplify the process of transferring a local Expo project to an Expo Snack. It allows developers to quickly create an Expo Snack from the current state of their local Expo project, making it easier to share and demo their React Native applications.
 
-Note: The Expo name and logo are trademarks of 650 Industries, Inc. This project is built and maintained by @danstepanov and not by the Expo team.
+Note: The [Expo](https://expo.dev) name and logo are trademarks of 650 Industries, Inc. This project is built and maintained by [danstepanov](https://github.com/danstepanov) and not by the Expo team.
 
 ## Features
 
