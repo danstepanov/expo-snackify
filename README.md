@@ -40,7 +40,7 @@ The command scans all the files in your Expo project, excluding `node_modules` a
 
 Contributions to Snackify are welcome. Please feel free to fork the repository, make your changes, and submit a pull request.
 
-Built with love by the folks that brought you Create Expo Stack](https://createexpostack.com/).
+Built with love by the folks that brought you [Create Expo Stack](https://createexpostack.com/).
 
 ## License
 
