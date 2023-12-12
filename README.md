@@ -26,7 +26,7 @@ This will install Snackify globally on your machine, allowing you to use it in a
 Navigate to the root directory of your Expo project and run:
 
 ```bash
-npx create snack
+npx create-snack
 ```
 
 The command scans all the files in your Expo project, excluding `node_modules` and `.git`, and creates a new Expo Snack. Upon completion, it provides a URL to the created Expo Snack.
